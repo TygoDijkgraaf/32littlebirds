@@ -9,5 +9,6 @@ public class ResetStaticDataManager : MonoBehaviour {
         SmashableBird.ResetStaticData();
         HintTextUI.ResetStaticData();
         DisruptionAnimation.ResetStaticData();
+        PlayspaceBounds.ResetStaticData();
     }
 }

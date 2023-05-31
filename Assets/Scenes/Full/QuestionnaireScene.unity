@@ -159,35 +159,28 @@ MonoBehaviour:
   pressableButtonBarPrefab5Answers: {fileID: 1368239199616887710, guid: fccb328353544ed4ea4f67eb7d7f82bb, type: 3}
   thankYouPrefab: {fileID: 6060325952168588755, guid: 92acafff8109bbb468c9466c438041a8, type: 3}
   questions:
-  - question: This is the text of question 1 with 2 answers
+  - question: '[PLACEHOLDER] Question 1'
     answers:
-    - Two
-    - Answers
-  - question: This is the text of question 2, which has 3 answers
+    - Option 1
+    - Option 2
+  - question: '[PLACEHOLDER] Question 2'
     answers:
-    - Three
-    - Answers
-    - Here
-  - question: This is the text of question 3, which has 4 answers
+    - Option 1
+    - Option 2
+    - Option 3
+  - question: '[PLACEHOLDER] Question 3'
     answers:
-    - Four
-    - Answers
-    - Here
-    - Wow
-  - question: One last question with more answers
+    - Option 1
+    - Option 2
+    - Option 3
+    - Option 4
+  - question: '[PLACEHOLDER] Question 4'
     answers:
-    - It
-    - Should
-    - Only
-    - Show
-    - Five
-    - Answers
-    - Anyway
-  - question: A fifth quesion
-    answers:
-    - Option1
-    - Option2
-    - Option3
+    - Option 1
+    - Option 2
+    - Option 3
+    - Option 4
+    - Option 5
 --- !u!4 &435665422
 Transform:
   m_ObjectHideFlags: 0
@@ -201,7 +194,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &435665423
 MonoBehaviour:
@@ -380,7 +373,7 @@ Camera:
   m_GameObject: {fileID: 1538023787}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -502,64 +495,6 @@ MonoBehaviour:
   gazeController: {fileID: 0}
   leftHandController: {fileID: 0}
   rightHandController: {fileID: 0}
---- !u!1 &1874449593
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1874449595}
-  - component: {fileID: 1874449594}
-  - component: {fileID: 1874449596}
-  m_Layer: 0
-  m_Name: DialogPool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1874449594
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1874449593}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a69521b3ce9adad4da2e79bb15ae34ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <DialogPrefab>k__BackingField: {fileID: 6930810733556124559, guid: cca6164bb2744884a92a100266f5f3aa, type: 3}
---- !u!4 &1874449595
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1874449593}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1874449596
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1874449593}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0eea7fc7d7e5aa5489b7615ef8b98f52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1988427136
 GameObject:
   m_ObjectHideFlags: 0
@@ -589,7 +524,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83d9acc7968244a8886f3af591305bcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeProfile: {fileID: 11400000, guid: 31a611a779d3499e8e35f1a2018ca841, type: 2}
+  activeProfile: {fileID: 11400000, guid: ac38566eea1d2b0449d0d6900054260f, type: 2}
 --- !u!4 &1988427138
 Transform:
   m_ObjectHideFlags: 0

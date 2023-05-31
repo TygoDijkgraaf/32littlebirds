@@ -6,11 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Full/MainMenuScene.unity
+    guid: f7ebcbc659eb13945bc5029273f1cb86
+  - enabled: 1
     path: Assets/Scenes/Full/PlayspaceBoundsScene.unity
     guid: b2fb4c0abfc6a2f44be5132fb92c2c78
-  - enabled: 1
-    path: Assets/Scenes/Full/LoadingScene.unity
-    guid: 1127f2c15bda643469ccab116e80656e
   - enabled: 1
     path: Assets/Scenes/Full/GameScene.unity
     guid: 9ac8deb3d243230459f4457cf9d005ca
@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Full/QuestionnaireScene.unity
     guid: b75d5d2bbb369cf4e9d04c5a54402896
+  - enabled: 1
+    path: Assets/Scenes/Full/LoadingScene.unity
+    guid: 1127f2c15bda643469ccab116e80656e
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 9625cb77c2568dd43850fcce0677cbfa, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 6bb3fb1697e23a54b988a0c75e589259, type: 2}

@@ -2,9 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnButton : MonoBehaviour {
-
-    private const string SPAWN = "Spawn";
+public class SpawnObjectAfterDelay : MonoBehaviour {
 
     [SerializeField] private Transform button;
     [SerializeField] private Transform spawnPoint;

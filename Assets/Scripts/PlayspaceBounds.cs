@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//! Currently playspacebounds object is destroyed, but visuals stay for testing purposes.
+//! This causes problems with reset. Destroy all visuals in final version!
+
 public class PlayspaceBounds : MonoBehaviour {
 
     public struct Playspace {
@@ -71,5 +74,13 @@ public class PlayspaceBounds : MonoBehaviour {
 
     public static Playspace GetPlayspace() {
         return new Playspace(xMin, xMax, zMin, zMax, yMin);
+    }
+
+    public static void ResetStaticData() {
+        xMin = -1f;
+        xMax = 1f;
+        zMin = -1f;
+        zMax = 1f;
+        yMin = -.5f;
     }
 }

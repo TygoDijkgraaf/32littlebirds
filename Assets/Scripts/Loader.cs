@@ -13,11 +13,17 @@ public static class Loader {
         LoadingScene,
         DisruptionScene,
         QuestionnaireScene,
+        Quit,
     }
 
     private static Scene targetScene;
 
     public static void Load(Scene scene) {
+        if (scene == Scene.Quit) {
+            Application.Quit();
+            return;
+        }
+
         Loader.targetScene = scene;
 
         SceneManager.LoadScene(Scene.LoadingScene.ToString());
