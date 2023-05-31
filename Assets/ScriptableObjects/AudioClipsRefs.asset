@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4403b9c5f7b7f5449396bb445fd9d5a, type: 3}
+  m_Name: AudioClipsRefs
+  m_EditorClassIdentifier: 
+  birdHit:
+  - {fileID: 8300000, guid: 451933c55b5af4b4a83555849eb47d62, type: 3}
+  - {fileID: 8300000, guid: 2e8ec667a18171c4c9d2ee39a034814b, type: 3}
+  birdSongs:
+  - {fileID: 8300000, guid: e868c18d4e0b5ab45af52645c6680844, type: 3}
+  - {fileID: 8300000, guid: e6209958387973947b669517c6c76460, type: 3}
+  - {fileID: 8300000, guid: 148e954901f21104a960804e72ae599b, type: 3}
+  - {fileID: 8300000, guid: 88cd66932850c6c4fbbb742ec868491b, type: 3}
+  - {fileID: 8300000, guid: fce07fb9ee1c4e8469eb3dd0106a9214, type: 3}
+  - {fileID: 8300000, guid: caa203e8241140740b1aa36136e06c7c, type: 3}
+  - {fileID: 8300000, guid: e2622b95524aab94b9a0448a1a4c6fc8, type: 3}
+  - {fileID: 8300000, guid: aa29893140715234fa4c6f0f17bc3d88, type: 3}
+  - {fileID: 8300000, guid: d261fcef075d71040aaa5ec709db8012, type: 3}
+  - {fileID: 8300000, guid: cb56b2933741ce44287d80a49e94a1cc, type: 3}
+  - {fileID: 8300000, guid: a2c080251f6238942b88f8fb392b20ee, type: 3}
+  - {fileID: 8300000, guid: 5c959748375d8b94a8a0c18cdfd02c9f, type: 3}
+  - {fileID: 8300000, guid: ba9e76e40d5f827458e3d17460e6232c, type: 3}
+  - {fileID: 8300000, guid: cdd2bf3db646249429213541df377729, type: 3}
+  angryCat: {fileID: 8300000, guid: d031d0e98a91d1e458324b2dcd3b1233, type: 3}
+  hint: {fileID: 8300000, guid: b48123487a599114f8970ed8df62e1f2, type: 3}
