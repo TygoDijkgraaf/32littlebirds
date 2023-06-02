@@ -2173,7 +2173,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6060325952168588755}
   - component: {fileID: 1925063723674089007}
-  - component: {fileID: 288349779756652854}
   m_Layer: 0
   m_Name: ThankYouText
   m_TagString: Untagged
@@ -2212,18 +2211,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questionText: {fileID: 5367011139836808257}
---- !u!114 &288349779756652854
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6060325952168588764}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cdcc4d271d151c4089bcba4d5052f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6453528758719842977
 GameObject:
   m_ObjectHideFlags: 0

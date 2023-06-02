@@ -738,8 +738,10 @@ PlayerSettings:
   metroCertificateIssuer: DefaultCompany
   metroCertificateNotAfter: 8009553ae28cda01
   metroApplicationDescription: Template_3D
-  wsaImages: {}
-  metroTileShortName: MRTK
+  wsaImages:
+    65736: 
+    65936: 
+  metroTileShortName: 32LB
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0

@@ -17,7 +17,8 @@ public class DisruptionAnimation : MonoBehaviour {
 
 
     private enum AnimationState {
-        Flying,
+        WaitingForPlayer,
+        BirdFlying,
         WaitingForCat,
         CatLeaping,
         Finished
@@ -26,13 +27,16 @@ public class DisruptionAnimation : MonoBehaviour {
     private const string FLYING = "flying";
     private const string LEAPING = "Leaping";
 
-    [SerializeField] private Transform birdPrefab;
+    [SerializeField] private Transform[] birdPrefabs;
     [SerializeField] private Transform birdSpawnPoint;
     [SerializeField] private Transform birdLandPosition;
+
     [SerializeField] private Transform cat;
     [SerializeField] private Transform catTarget;
-
     [SerializeField] private AnimationCurve catCurve;
+
+    [SerializeField] private Transform disruptionAreaMarker;
+    [SerializeField] private Transform disruptionAreaPointer;
 
     private Vector3 catStartPosition, catStartRotation;
     private Transform bird;
@@ -43,18 +47,28 @@ public class DisruptionAnimation : MonoBehaviour {
     private float timeSinceCatLeaped = 0f;
     private float timeToLeap = 2f;
     private bool birdKilled = false;
+    private float maxDistanceFromCenter;
 
     private void Awake() {
+        disruptionAreaMarker.position = new Vector3(disruptionAreaMarker.position.x,
+                                                    PlayspaceBounds.GetPlayspace().yMin,
+                                                    disruptionAreaMarker.position.z);
+        maxDistanceFromCenter = disruptionAreaMarker.localScale.x / 2f;
+
+        Camera.main.transform.position = new Vector3(2f, 0, 2f);
         cat.gameObject.SetActive(false);
         catStartPosition = cat.position;
         catStartRotation = cat.localEulerAngles;
-        animationState = AnimationState.Flying;
-        SpawnBird();
+        animationState = AnimationState.WaitingForPlayer;
     }
 
     private void Update() {
         switch (animationState) {
-            case AnimationState.Flying:
+            case AnimationState.WaitingForPlayer:
+                CheckPlayerLocation();
+                break;
+
+            case AnimationState.BirdFlying:
                 bird.position = Vector3.MoveTowards(bird.position, birdLandPosition.position, .5f * Time.deltaTime);
                 bird.LookAt(birdLandPosition);
 
@@ -90,7 +104,7 @@ public class DisruptionAnimation : MonoBehaviour {
     }
 
     private void SpawnBird() {
-        bird = Instantiate(birdPrefab, birdSpawnPoint.position, Quaternion.identity);
+        bird = Instantiate(birdPrefabs[UnityEngine.Random.Range(0, birdPrefabs.Length)], birdSpawnPoint.position, Quaternion.identity);
         birdAnimator = bird.GetComponent<Animator>();
         birdAnimator.SetBool(FLYING, true);
     }
@@ -119,6 +133,28 @@ public class DisruptionAnimation : MonoBehaviour {
             OnBirdKilled?.Invoke(this, new OnBirdKilledEventArgs {
                 position = birdLandPosition.position
             });
+        }
+    }
+
+    private void CheckPlayerLocation() {
+        // Get the position of the player and project it onto the XZ plane
+        Vector3 playerPosition = Camera.main.transform.position;
+        Vector2 playerPositionXZ = new Vector2(playerPosition.x, playerPosition.z);
+
+        // Calculate a position for the arrow pointer somewhere in front of the player
+        Vector3 markerPosition = playerPosition + Camera.main.transform.forward * .2f;
+        markerPosition.y = playerPosition.y - .2f;
+        disruptionAreaPointer.position = markerPosition;
+
+        // Rotate the arrow pointer to point at the center of the disruption area
+        disruptionAreaPointer.LookAt(new Vector3(0f, PlayspaceBounds.GetPlayspace().yMin, 0f));
+
+        // If the player has reached the destination, spawn the bird and start the animation
+        // Use sqrMagnitude for performance
+        if (playerPositionXZ.sqrMagnitude < maxDistanceFromCenter*maxDistanceFromCenter) {
+            SpawnBird();
+            disruptionAreaPointer.gameObject.SetActive(false);
+            animationState = AnimationState.BirdFlying;
         }
     }
 

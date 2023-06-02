@@ -4,18 +4,33 @@ using UnityEngine;
 
 public class SpawnObjectAfterDelay : MonoBehaviour {
 
-    [SerializeField] private Transform button;
-    [SerializeField] private Transform spawnPoint;
-    [SerializeField] private float delay;
-
-    private float timeUntillSpawn;
-
-    private void Awake() {
-        StartCoroutine(Spawn());
+    private enum SpawnOption {
+        Spawn,
+        Despawn
     }
 
-    private IEnumerator Spawn() {
+    [SerializeField] private Transform objectToSpawn;
+    [SerializeField] private float delay;
+    [SerializeField] private SpawnOption spawnOption;
+
+    private bool spawned;
+
+    private void Awake() {
+        switch (spawnOption) {
+            case SpawnOption.Spawn:
+                spawned = false;
+                break;
+            case SpawnOption.Despawn:
+                spawned = true;
+                break;
+        }
+
+        objectToSpawn.gameObject.SetActive(spawned);
+        StartCoroutine(SpawnDespawn());
+    }
+
+    private IEnumerator SpawnDespawn() {
         yield return new WaitForSeconds(delay);
-        Instantiate(button, spawnPoint);
+        objectToSpawn.gameObject.SetActive(!spawned);
     }
 }
