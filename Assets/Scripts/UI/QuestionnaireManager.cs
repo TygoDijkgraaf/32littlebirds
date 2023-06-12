@@ -16,14 +16,14 @@ public class QuestionnaireManager : MonoBehaviour {
 
     public static QuestionnaireManager Instance { get; private set; }
 
-
+    [Header("Prefabs")]
     [SerializeField] private Transform pressableButtonBarPrefab2Answers;
     [SerializeField] private Transform pressableButtonBarPrefab3Answers;
     [SerializeField] private Transform pressableButtonBarPrefab4Answers;
     [SerializeField] private Transform pressableButtonBarPrefab5Answers;
-
     [SerializeField] private Transform thankYouPrefab;
 
+    [Header("Questions & Answers")]
     [SerializeField] private Question[] questions;
 
     private Transform pressableButtonBar;
@@ -45,8 +45,6 @@ public class QuestionnaireManager : MonoBehaviour {
     }
 
     private void InstantiateButtonBar() {
-        Debug.Log("Question \"" + questions[questionIndex].question + "\" asked");
-
         Transform pressableButtonBarPrefab = null;
         int answers = Mathf.Clamp(questions[questionIndex].answers.Length, 2, 5);
 
@@ -88,8 +86,6 @@ public class QuestionnaireManager : MonoBehaviour {
     }
 
     public void ButtonPress(int index) {
-        Debug.Log("\"" + questions[questionIndex].answers[index] + "\" was answered");
-
         userAnswers[questionIndex] = index;
         NextQuestion();
     }
