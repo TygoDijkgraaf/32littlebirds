@@ -2,9 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//! Currently playspacebounds object is destroyed, but visuals stay for testing purposes.
-//! This causes problems with reset. Destroy all visuals in final version!
-
 public class PlayspaceBounds : MonoBehaviour {
 
     public struct Playspace {
@@ -33,41 +30,55 @@ public class PlayspaceBounds : MonoBehaviour {
     [SerializeField] private Transform zPlaneMax;
     [SerializeField] private Transform floorPlane;
 
-    private Vector3? maybeRightHandPosition;
-    private Vector3 rightHandPosition;
+    private Vector3? maybeRightHandPosition, maybeLeftHandPosition;
+    private Vector3 rightHandPosition, leftHandPosition, maxHandPosition, minHandPosition;
     private static float xMin = -1f, xMax = 1f, zMin = -1f, zMax = 1f;
     private static float yMin = -.5f;
 
     private void Update() {
         maybeRightHandPosition = HandTracker.GetRightHandPosition();
-        if (maybeRightHandPosition == null) {
-            return;
+        maybeLeftHandPosition = HandTracker.GetLeftHandPosition();
+
+        // Check if hands are available. If not, set to zero as to not interfere
+        if (maybeRightHandPosition != null) {
+            rightHandPosition = (Vector3)maybeRightHandPosition;
+        } else {
+            rightHandPosition = new Vector3(0, 0, 0);
         }
 
-        rightHandPosition = (Vector3)maybeRightHandPosition;
+        if (maybeLeftHandPosition != null) {
+            leftHandPosition = (Vector3)maybeLeftHandPosition;
+        } else {
+            leftHandPosition = new Vector3(0, 0, 0);
+        }
 
-        if (rightHandPosition.x < xMin) {
-            xMin = rightHandPosition.x;
+        // Get the min and max hand positions
+        minHandPosition = Vector3.Min(rightHandPosition, leftHandPosition);
+        maxHandPosition = Vector3.Max(rightHandPosition, leftHandPosition);
+
+        // Adjust the bounds if necessary
+        if (minHandPosition.x < xMin) {
+            xMin = minHandPosition.x;
             xPlaneMin.position = new Vector3(xMin, 0, 0);
         }
 
-        if (rightHandPosition.x > xMax) {
-            xMax = rightHandPosition.x;
+        if (maxHandPosition.x > xMax) {
+            xMax = maxHandPosition.x;
             xPlaneMax.position = new Vector3(xMax, 0, 0);
         }
 
-        if (rightHandPosition.z < zMin) {
-            zMin = rightHandPosition.z;
+        if (minHandPosition.z < zMin) {
+            zMin = minHandPosition.z;
             zPlaneMin.position = new Vector3(0, 0, zMin);
         }
 
-        if (rightHandPosition.z > zMax) {
-            zMax = rightHandPosition.z;
+        if (maxHandPosition.z > zMax) {
+            zMax = maxHandPosition.z;
             zPlaneMax.position = new Vector3(0, 0, zMax);
         }
 
-        if (rightHandPosition.y < yMin) {
-            yMin = rightHandPosition.y;
+        if (minHandPosition.y < yMin) {
+            yMin = minHandPosition.y;
             floorPlane.position = new Vector3(0, yMin, 0);
         }
     }

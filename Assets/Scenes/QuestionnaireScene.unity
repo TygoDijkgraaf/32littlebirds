@@ -209,7 +209,7 @@ MonoBehaviour:
     - Neutraal
     - Mee eens
     - Helemaal mee eens
-  - question: Ik moest veel dnigen leren om de applicatie te kunnen gebruiken
+  - question: Ik moest veel dingen leren om de applicatie te kunnen gebruiken
     answers:
     - Helemaal mee eens
     - Mee eens
@@ -220,14 +220,14 @@ MonoBehaviour:
     answers:
     - Ja
     - Nee
-  - question: Wat is je algmene mening over katten?
+  - question: Wat is je algemene mening over katten?
     answers:
     - Zeer negatief
     - Negatief
     - Neutraal
     - Positief
     - Zeer positief
-  - question: Wat is je algmene mening over vogels?
+  - question: Wat is je algemene mening over vogels?
     answers:
     - Zeer negatief
     - Negatief

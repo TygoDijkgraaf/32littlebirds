@@ -220,7 +220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToSpawn: {fileID: 2779497420142258949}
-  delay: 5
+  delay: 8
   spawnOption: 0
 --- !u!1 &182699753
 GameObject:
@@ -700,7 +700,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Move the planes with your hands to align them with the walls and floor
+  m_text: Push the planes with your hands to align them with the walls and floor
     of the playspace.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

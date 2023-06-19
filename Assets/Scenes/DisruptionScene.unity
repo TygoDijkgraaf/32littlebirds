@@ -948,7 +948,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToSpawn: {fileID: 2779497419492532066}
-  delay: 10
+  delay: 12
   spawnOption: 0
 --- !u!1 &1803682524
 GameObject:
