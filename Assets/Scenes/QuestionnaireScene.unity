@@ -211,11 +211,11 @@ MonoBehaviour:
     - Helemaal mee eens
   - question: Ik moest veel dingen leren om de applicatie te kunnen gebruiken
     answers:
-    - Helemaal mee eens
-    - Mee eens
-    - Neutraal
-    - Mee oneens
     - Helemaal mee oneens
+    - Mee oneens
+    - Neutraal
+    - Mee eens
+    - Helemaal mee eens
   - question: Heb je een kat?
     answers:
     - Ja
