@@ -159,81 +159,24 @@ MonoBehaviour:
   pressableButtonBarPrefab5Answers: {fileID: 1368239199616887710, guid: fccb328353544ed4ea4f67eb7d7f82bb, type: 3}
   thankYouPrefab: {fileID: 6060325952168588755, guid: 92acafff8109bbb468c9466c438041a8, type: 3}
   questions:
-  - question: Ik vond de applicatie makkelijk te gebruiken
+  - question: '[EXAMPLE 1]'
     answers:
-    - Helemaal mee oneens
-    - Mee oneens
-    - Neutraal
-    - Mee eens
-    - Helemaal mee eens
-  - question: Ik zou hulp nodig hebben van een technisch persoon om de applicatie
-      te gebruiken
+    - Option 1
+    - Option 2
+    - Option 3
+  - question: '[EXAMPLE 2]'
     answers:
-    - Helemaal mee oneens
-    - Mee oneens
-    - Neutraal
-    - Mee eens
-    - Helemaal mee eens
-  - question: "Ik vond het gebruik van de applicatie intu\xEFtief"
+    - Option 1
+    - Option 2
+    - Option 3
+    - Option 4
+  - question: '[EXAMPLE 3]'
     answers:
-    - Helemaal mee oneens
-    - Mee oneens
-    - Neutraal
-    - Mee eens
-    - Helemaal mee eens
-  - question: Ik vond de applicatie onnodig complex
-    answers:
-    - Helemaal mee oneens
-    - Mee oneens
-    - Neutraal
-    - Mee eens
-    - Helemaal mee eens
-  - question: Ik denk dat de meeste mensen snel leren met de applicatie om te gaan
-    answers:
-    - Helemaal mee oneens
-    - Mee oneens
-    - Neutraal
-    - Mee eens
-    - Helemaal mee eens
-  - question: Ik vond de applicatie omslachtig
-    answers:
-    - Helemaal mee oneens
-    - Mee oneens
-    - Neutraal
-    - Mee eens
-    - Helemaal mee eens
-  - question: Ik voelde me zelfverzekerd tijdens het gebruik van de applicatie
-    answers:
-    - Helemaal mee oneens
-    - Mee oneens
-    - Neutraal
-    - Mee eens
-    - Helemaal mee eens
-  - question: Ik moest veel dingen leren om de applicatie te kunnen gebruiken
-    answers:
-    - Helemaal mee oneens
-    - Mee oneens
-    - Neutraal
-    - Mee eens
-    - Helemaal mee eens
-  - question: Heb je een kat?
-    answers:
-    - Ja
-    - Nee
-  - question: Wat is je algemene mening over katten?
-    answers:
-    - Zeer negatief
-    - Negatief
-    - Neutraal
-    - Positief
-    - Zeer positief
-  - question: Wat is je algemene mening over vogels?
-    answers:
-    - Zeer negatief
-    - Negatief
-    - Neutraal
-    - Positief
-    - Zeer positief
+    - Option 1
+    - Option 2
+    - Option 3
+    - Option 4
+    - Option 5
 --- !u!4 &435665422
 Transform:
   m_ObjectHideFlags: 0
